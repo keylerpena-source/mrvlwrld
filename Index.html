@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paws & Care - Professional Pet Sitting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('download.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        
+        /* TOP NAVIGATION BAR */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            z-index: 999;
+            padding: 0.5rem 1rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .nav-logo {
+            color: #FFD700;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.5);
+            transform: translateY(-1px);
+            color: #FFD700;
+        }
+        
+        .nav-link.action {
+            background: rgba(76, 175, 80, 0.2);
+            border-color: rgba(76, 175, 80, 0.4);
+        }
+        
+        .nav-link.action:hover {
+            background: rgba(76, 175, 80, 0.3);
+            border-color: rgba(76, 175, 80, 0.6);
+            color: #4CAF50;
+        }
+        
+        .nav-link.contact {
+            background: rgba(244, 67, 54, 0.2);
+            border-color: rgba(244, 67, 54, 0.4);
+        }
+        
+        .nav-link.contact:hover {
+            background: rgba(244, 67, 54, 0.3);
+            border-color: rgba(244, 67, 54, 0.6);
+            color: #f44336;
+        }
+        
+        .nav-icon {
+            font-size: 1rem;
+        }
+        
+        .hero-section {
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('agreat.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 6rem 2rem 2rem 2rem; /* Added top padding for fixed nav */
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+        
+        .hero-buttons {
+            margin-top: 2rem;
+        }
+        
+        .hero-button {
+            background-color: #FFD700;
+            color: #333;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 20px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .hero-button:hover {
+            background-color: #FFC107;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+        
+        .secondary-button {
+            background-color: transparent;
+            border: 3px solid white;
+            color: white;
+        }
+        
+        .secondary-button:hover {
+            background-color: white;
+            color: #FFD700;
+        }
+        
+        .about-me {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .credentials-section {
+            background: rgba(255, 248, 220, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 900px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .credential-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border-top: 4px solid #FFD700;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        
+        .requirements-section {
+            background: rgba(255, 228, 225, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 900px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .requirement-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 5px solid #ff6b6b;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        
+        .checklist {
+            text-align: left;
+            margin: 1rem 0;
+        }
+        
+        .checklist li {
+            margin: 0.5rem 0;
+        }
+        
+        .services {
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            display: inline-block;
+            width: 250px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Book Now Button for Services Section */
+        .book-now-section {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .book-now-button {
+            background: linear-gradient(135deg, #FFD700, #FFC107);
+            color: #333;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 30px;
+            font-size: 22px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .book-now-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(135deg, #FFC107, #FFD700);
+        }
+        
+        .pet-food-section {
+            background: rgba(255, 248, 220, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 900px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .food-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 5px solid #FFD700;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        
+        /* REVIEWS SECTION */
+        .reviews-section {
+            background: rgba(240, 255, 240, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem;
+            margin: 2rem auto;
+            max-width: 1000px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .review-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid #FFD700;
+            position: relative;
+        }
+        
+        .review-stars {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .review-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .review-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFD700, #FFC107);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .review-info h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        
+        .review-info p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .review-pet {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+        
+        /* CONTACT INFO */
+        .contact-info {
+            background: rgba(255, 248, 220, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 600px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .contact-button {
+            background-color: #FFD700;
+            color: #333;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .contact-button:hover {
+            background-color: #FFC107;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* QR CODE SECTION - MOVED TO END */
+        .qr-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            margin: 2rem auto 4rem auto;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .qr-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .qr-code-wrapper {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            border: 3px solid #FFD700;
+            display: inline-block;
+        }
+        
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            background: white;
+            border: none;
+            display: block;
+        }
+        
+        .qr-info {
+            max-width: 400px;
+        }
+        
+        .qr-info h3 {
+            color: #FFD700;
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .qr-info p {
+            color: #333;
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+        
+        .qr-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        
+        .qr-button {
+            background: linear-gradient(135deg, #FFD700, #FFC107);
+            color: #333;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .qr-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(135deg, #FFC107, #FFD700);
+        }
+        
+        /* FOOTER STYLING FOR QR SECTION */
+        .qr-section::after {
+            content: "";
+            display: block;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 2px solid rgba(255, 215, 0, 0.2);
+            text-align: center;
+        }
+        
+        .qr-footer-text {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 2px solid rgba(255, 215, 0, 0.2);
+            color: #666;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        /* OVERLAY STYLES (SHARED) */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        
+        .modal {
+            background: rgba(255, 248, 220, 0.98);
+            backdrop-filter: blur(15px);
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            position: relative;
+            animation: modalSlideIn 0.4s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, #FFD700, #FFC107);
+            color: #333;
+            padding: 2rem;
+            border-radius: 18px 18px 0 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #333;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #FFD700;
+            transform: scale(1.1);
+        }
+        
+        .modal-content {
+            padding: 3rem 2rem;
+        }
+        
+        /* SAVED INFO SECTION */
+        .saved-info-section {
+            background: rgba(76, 175, 80, 0.1);
+            border: 2px solid rgba(76, 175, 80, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .saved-info-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .info-button {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            font-size: 14px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        }
+        
+        .info-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+        }
+        
+        .info-button.danger {
+            background: linear-gradient(135deg, #f44336, #d32f2f);
+            box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+        }
+        
+        .info-button.danger:hover {
+            box-shadow: 0 6px 16px rgba(244, 67, 54, 0.4);
+        }
+        
+        /* BOOKING SPECIFIC STYLES */
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .booking-form {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .booking-summary {
+            background: rgba(255, 215, 0, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            position: sticky;
+            top: 2rem;
+        }
+        
+        /* CONTACT SPECIFIC STYLES */
+        .contact-container {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-method {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin: 2rem 0;
+        }
+        
+        .contact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FFD700;
+            margin: 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .contact-email {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FFD700;
+            margin: 1rem 0;
+            word-break: break-all;
+        }
+        
+        .contact-action-button {
+            background: linear-gradient(135deg, #FFD700, #FFC107);
+            color: #333;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .contact-action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(135deg, #FFC107, #FFD700);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+            font-size: 1rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            box-sizing: border-box;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+            background: white;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .service-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .service-option {
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .service-option:hover {
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .service-option.selected {
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+        }
+        
+        .service-option input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .service-option h4 {
+            margin: 0 0 0.5rem 0;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        
+        .service-option .price {
+            font-weight: 700;
+            color: #FFD700;
+            font-size: 1.2rem;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .summary-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #FFD700;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .booking-button {
+            background: linear-gradient(135deg, #FFD700, #FFC107);
+            color: #333;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        .booking-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(135deg, #FFC107, #FFD700);
+        }
+        
+        .booking-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .emergency-note {
+            background: rgba(255, 243, 205, 0.9);
+            border: 2px solid #ffb74d;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        
+        .emergency-note h4 {
+            margin: 0 0 0.5rem 0;
+            color: #f57c00;
+        }
+        
+        .success-message {
+            display: none;
+            background: rgba(255, 215, 0, 0.9);
+            color: #333;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+        
+        .success-message h3 {
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+        }
+        
+        /* SMOOTH SCROLLING */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        @media (max-width: 1024px) {
+            .nav-links {
+                gap: 0.3rem;
+            }
+            
+            .nav-link {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+            
+            .nav-icon {
+                font-size: 0.9rem;
+            }
+            
+            .qr-code {
+                width: 150px;
+                height: 150px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-nav {
+                padding: 0.5rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .nav-links {
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .nav-link {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.75rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .hero-section {
+                padding-top: 8rem;
+            }
+            
+            .qr-code {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .qr-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .overlay {
+                padding: 1rem;
+            }
+            
+            .modal-content {
+                padding: 2rem 1rem;
+            }
+            
+            .booking-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-selection {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-number {
+                font-size: 2rem;
+            }
+            
+            .contact-email {
+                font-size: 1.5rem;
+            }
+            
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .saved-info-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        
+        p {
+            font-weight: 400;
+        }
+        
+        strong {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- TOP NAVIGATION BAR -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span>🐾</span>
+                <span>Paws & Care</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="#about" class="nav-link">
+                    <span class="nav-icon">👋</span>
+                    <span>About</span>
+                </a>
+                
+                <a href="#credentials" class="nav-link">
+                    <span class="nav-icon">🏆</span>
+                    <span>Credentials</span>
+                </a>
+                
+                <a href="#requirements" class="nav-link">
+                    <span class="nav-icon">📋</span>
+                    <span>Requirements</span>
+                </a>
+                
+                <a href="#services" class="nav-link">
+                    <span class="nav-icon">🎾</span>
+                    <span>Services</span>
+                </a>
+                
+                <a href="#nutrition" class="nav-link">
+                    <span class="nav-icon">🍽️</span>
+                    <span>Nutrition</span>
+                </a>
+                
+                <a href="#reviews" class="nav-link">
+                    <span class="nav-icon">⭐</span>
+                    <span>Reviews</span>
+                </a>
+                
+                <a href="javascript:void(0)" onclick="openBooking()" class="nav-link action">
+                    <span class="nav-icon">📅</span>
+                    <span>Book Now</span>
+                </a>
+                
+                <a href="#contact" class="nav-link contact">
+                    <span class="nav-icon">📞</span>
+                    <span>Contact</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>🐾 Paws & Care</h1>
+            <p>Boston's Most Trusted Pet Sitting Service</p>
+            <p>Your pet's happiness is our mission! Professional, caring, and always available.</p>
+            <div class="hero-buttons">
+                <a href="#about" class="hero-button">Learn More</a>
+                <a href="#contact" class="hero-button secondary-button">Contact Info</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="about-me" id="about">
+        <h2>Meet Your Pet Sitter - Fiona Chung</h2>
+        <p>🐕 Hi! I'm Fiona, a lifelong animal lover with 8+ years of professional pet care experience. I treat every pet like family!</p>
+        <p><strong>My Story:</strong> I grew up in a household with 3 dogs, 2 cats, and even a rescue rabbit! After graduating from Boston University with a degree in Animal Science, I decided to turn my passion into my profession. I've been Boston's trusted pet sitter since 2016!</p>
+        <p><strong>Why choose me?</strong> I send daily photo updates, follow your pet's exact routine, and provide 24/7 emergency contact. Your furry family is safe with me!</p>
+    </div>
+
+    <div class="credentials-section" id="credentials">
+        <h2>🏆 Professional Credentials & Background</h2>
+        <p style="text-align: center;"><strong>Fully Licensed, Insured, and Certified Professional</strong></p>
+        
+        <div class="credentials-grid">
+            <div class="credential-card">
+                <h3>🎓 Education</h3>
+                <p><strong>Boston University</strong><br>
+                B.S. in Animal Science (2015)<br>
+                Minor in Veterinary Studies</p>
+            </div>
+            
+            <div class="credential-card">
+                <h3>🏥 Certifications</h3>
+                <p>✅ Pet First Aid & CPR Certified<br>
+                ✅ Professional Pet Sitter Certification<br>
+                ✅ Animal Behavior Specialist<br>
+                ✅ Medication Administration Certified</p>
+            </div>
+            
+            <div class="credential-card">
+                <h3>🛡️ Safety & Legal</h3>
+                <p>✅ Fully Bonded & Insured ($2M Coverage)<br>
+                ✅ Background Check Verified<br>
+                ✅ Massachusetts Pet Care License<br>
+                ✅ Member of Pet Sitters International</p>
+            </div>
+            
+            <div class="credential-card">
+                <h3>🌟 Experience</h3>
+                <p><strong>8+ Years Professional Experience</strong><br>
+                • 500+ Happy Pet Families<br>
+                • Emergency Vet Experience (2 years)<br>
+                • Special Needs Pet Specialist<br>
+                • Multi-Pet Household Expert</p>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 2rem; font-size: 18px;">
+            <strong>📜 All certifications available for review upon request</strong>
+        </p>
+    </div>
+
+    <div class="requirements-section" id="requirements">
+        <h2>📋 Booking Requirements & What You Need</h2>
+        <p style="text-align: center;"><strong>To ensure the BEST care for your pet, please have these ready when booking:</strong></p>
+        
+        <div class="requirements-grid">
+            <div class="requirement-card">
+                <h3>🏥 Health & Safety Info</h3>
+                <ul class="checklist">
+                    <li>✅ Current vaccination records</li>
+                    <li>✅ Veterinarian contact information</li>
+                    <li>✅ Emergency vet clinic details</li>
+                    <li>✅ Any medical conditions or medications</li>
+                    <li>✅ Microchip information (if applicable)</li>
+                </ul>
+            </div>
+            
+            <div class="requirement-card">
+                <h3>🍽️ Feeding & Care Details</h3>
+                <ul class="checklist">
+                    <li>✅ Feeding schedule and portion sizes</li>
+                    <li>✅ Food brand and location</li>
+                    <li>✅ Treat preferences and restrictions</li>
+                    <li>✅ Walking/exercise routine</li>
+                    <li>✅ Favorite toys and comfort items</li>
+                </ul>
+            </div>
+            
+            <div class="requirement-card">
+                <h3>📞 Contact & Emergency Info</h3>
+                <ul class="checklist">
+                    <li>✅ Your contact information while away</li>
+                    <li>✅ Emergency contact person locally</li>
+                    <li>✅ House alarm codes (if applicable)</li>
+                    <li>✅ WiFi password for updates</li>
+                    <li>✅ Preferred communication method</li>
+                </ul>
+            </div>
+            
+            <div class="requirement-card">
+                <h3>💰 Booking & Payment</h3>
+                <ul class="checklist">
+                    <li>✅ 48-hour advance booking minimum</li>
+                    <li>✅ Meet & greet required for new clients</li>
+                    <li>✅ 50% deposit to secure booking</li>
+                    <li>✅ Final payment due at service start</li>
+                    <li>✅ Cancellation 24 hours in advance</li>
+                </ul>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 2rem; background: rgba(255, 255, 255, 0.9); padding: 1rem; border-radius: 10px;">
+            <strong>🎯 Don't worry!</strong> I'll walk you through everything during our meet & greet. My goal is to make this as EASY as possible for you!
+        </p>
+    </div>
+    
+    <div class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="service-card">
+            <h3>🏠 In-Home Care</h3>
+            <p>Your pets stay comfortable at home while you're away</p>
+            <p><strong>$35/day</strong></p>
+        </div>
+        
+        <div class="service-card">
+            <h3>🚶 Dog Walking</h3>
+            <p>Daily walks to keep your furry friend happy and healthy</p>
+            <p><strong>$20/walk</strong></p>
+        </div>
+        
+        <div class="service-card">
+            <h3>🎾 Pet Playtime</h3>
+            <p>Interactive play sessions for energetic pets</p>
+            <p><strong>$25/hour</strong></p>
+        </div>
+        
+        <!-- BOOK NOW BUTTON SECTION -->
+        <div class="book-now-section">
+            <button class="book-now-button" onclick="openBooking()">
+                📅 Book Now - Get Started!
+            </button>
+            <p style="margin-top: 1rem; font-size: 1.1rem; color: #555;">
+                <strong>Ready to book?</strong> Click above to start your booking!
+            </p>
+        </div>
+    </div>
+
+    <div class="pet-food-section" id="nutrition">
+        <h2>🍽️ Pet Nutrition & Feeding Care</h2>
+        <p><strong>Your pet's diet is sacred to me!</strong> I follow your exact feeding schedule and dietary requirements to keep your furry friend healthy and happy.</p>
+        
+        <div class="food-grid">
+            <div class="food-card">
+                <h3>🥘 Custom Feeding Schedule</h3>
+                <p>I stick to YOUR pet's exact meal times, portions, and special dietary needs. No exceptions!</p>
+            </div>
+            
+            <div class="food-card">
+                <h3>🏥 Special Diets Welcome</h3>
+                <p>Allergies? Medications? Senior diet? I'm experienced with all special dietary requirements.</p>
+            </div>
+            
+            <div class="food-card">
+                <h3>🥩 Fresh Food & Treats</h3>
+                <p>I can provide high-quality pet food and healthy treats, or use exactly what you provide.</p>
+            </div>
+            
+            <div class="food-card">
+                <h3>💧 Hydration Monitoring</h3>
+                <p>Fresh water daily and I monitor eating/drinking habits to ensure your pet stays healthy.</p>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 2rem;">
+            <strong>📋 Before your trip:</strong> I'll get detailed feeding instructions, favorite treats, food locations, and any dietary restrictions. Your pet's routine stays EXACTLY the same!
+        </p>
+    </div>
+
+    <!-- REVIEWS SECTION -->
+    <div class="reviews-section" id="reviews">
+        <h2 style="text-align: center; margin-bottom: 1rem;">⭐ What Pet Parents Say About Fiona</h2>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">
+            <strong>Over 500 Happy Families & Their Furry Friends!</strong>
+        </p>
+        
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-text">
+                    "Fiona is absolutely AMAZING! She took care of our golden retriever Max for a week while we were on vacation. The daily photo updates were incredible - we could see how happy Max was! When we came home, he was so relaxed and well-cared for. Fiona even cleaned up after him better than we do! 😂"
+                </div>
+                <div class="review-author">
+                    <div class="review-avatar">SM</div>
+                    <div class="review-info">
+                        <h4>Sarah & Mike Thompson</h4>
+                        <p>Back Bay, Boston • 3 years as clients</p>
+                        <div class="review-pet">🐕 Max (Golden Retriever, 4 years old)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-text">
+                    "I was SO nervous leaving my two cats Luna and Shadow for the first time. Fiona's meet & greet put me at ease immediately. She's incredibly professional and clearly loves animals. My shy cat Shadow actually came out to greet her by day 3! The detailed care notes she left were amazing."
+                </div>
+                <div class="review-author">
+                    <div class="review-avatar">JC</div>
+                    <div class="review-info">
+                        <h4>Jessica Chen</h4>
+                        <p>Cambridge • Regular client since 2019</p>
+                        <div class="review-pet">🐱 Luna & Shadow (Maine Coons, 2 & 5 years)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-text">
+                    "Fiona saved us during a family emergency! She was able to take Buddy on short notice and even administered his arthritis medication perfectly. Her experience with senior dogs really shows. Buddy came home happy and healthy. We're clients for life!"
+                </div>
+                <div class="review-author">
+                    <div class="review-avatar">RF</div>
+                    <div class="review-info">
+                        <h4>Robert & Frances Wilson</h4>
+                        <p>Beacon Hill • Emergency booking 2023</p>
+                        <div class="review-pet">🐕 Buddy (Senior Lab Mix, 12 years old)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-text">
+                    "As a single mom, finding reliable pet care is crucial. Fiona has been watching Coco for 2 years now and I trust her completely. She's always on time, sends the cutest updates, and Coco gets SO excited when she sees Fiona's car! Worth every penny."
+                </div>
+                <div class="review-author">
+                    <div class="review-avatar">AL</div>
+                    <div class="review-info">
+                        <h4>Amanda Lopez</h4>
+                        <p>South End • Weekly dog walking client</p>
+                        <div class="review-pet">🐕 Coco (French Bulldog, 3 years old)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-text">
+                    "We have 3 pets (2 dogs, 1 cat) and Fiona handles them like a pro! She knows each of their personalities and quirks. Our anxious rescue dog Penny has never been happier with a sitter. Fiona's patience and expertise with rescue animals is incredible."
+                </div>
+                <div class="review-author">
+                    <div class="review-avatar">DK</div>
+                    <div class="review-info">
+                        <h4>David & Kate Morrison</h4>
+                        <p>Somerville • Multi-pet household</p>
+                        <div class="review-pet">🐕🐕🐱 Penny, Rex & Whiskers</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-text">
+                    "Fiona went above and beyond when our cat Oliver got sick during our trip. She immediately contacted us AND the vet, got him the care he needed, and kept us updated every step of the way. She literally saved his life. Forever grateful! ❤️"
+                </div>
+                <div class="review-author">
+                    <div class="review-avatar">MR</div>
+                    <div class="review-info">
+                        <h4>Maria Rodriguez</h4>
+                        <p>Jamaica Plain • Emergency vet situation</p>
+                        <div class="review-pet">🐱 Oliver (Tabby Cat, 7 years old)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 15px;">
+            <h3 style="color: #FFD700; margin: 0 0 1rem 0;">🏆 Why Families Choose Fiona</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: center;">
+                <div>
+                    <h4 style="color: #333; margin: 0.5rem 0;">📱 Daily Updates</h4>
+                    <p style="margin: 0; color: #666;">Photos & videos every day</p>
+                </div>
+                <div>
+                    <h4 style="color: #333; margin: 0.5rem 0;">🚨 24/7 Emergency</h4>
+                    <p style="margin: 0; color: #666;">Always available for urgent needs</p>
+                </div>
+                <div>
+                    <h4 style="color: #333; margin: 0.5rem 0;">🏥 Medical Experience</h4>
+                    <p style="margin: 0; color: #666;">Certified in pet first aid & medications</p>
+                </div>
+                <div>
+                    <h4 style="color: #333; margin: 0.5rem 0;">❤️ Genuine Love</h4>
+                    <p style="margin: 0; color: #666;">Treats every pet like family</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <div class="contact-info" id="contact">
+        <h2>📞 Contact Information</h2>
+        <p><strong>Phone:</strong> (617) 555-PETS (7387)</p>
+        <p><strong>Email:</strong> fiona@pawsandcare.com</p>
+        <p><strong>Service Area:</strong> Boston & Surrounding Areas</p>
+        <p><strong>Emergency Line:</strong> (617) 555-HELP</p>
+        
+        <button class="contact-button" onclick="openPhone()">📱 Text Me Now</button>
+        <button class="contact-button" onclick="openEmail()">✉️ Send Email</button>
+    </div>
+
+    <!-- QR CODE SECTION - MOVED TO THE END -->
+    <div class="qr-section" id="qr">
+        <div class="qr-container">
+            <div class="qr-code-wrapper">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://pawsandcare.com" alt="QR Code for Paws & Care Website" class="qr-code">
+            </div>
+            
+            <div class="qr-info">
+                <h3>📱 Quick Access QR Code</h3>
+                <p><strong>Scan with your phone to instantly access our website!</strong></p>
+                <p>Perfect for sharing with friends, saving to your phone, or printing for easy access. This QR code links directly to our booking page so you can schedule pet care anytime, anywhere!</p>
+                
+                <div class="qr-buttons">
+                    <button class="qr-button" onclick="downloadQR()">
+                        <span>💾</span>
+                        <span>Download QR Code</span>
+                    </button>
+                    
+                    <button class="qr-button" onclick="shareQR()">
+                        <span>📤</span>
+                        <span>Share QR Code</span>
+                    </button>
+                    
+                    <button class="qr-button" onclick="printQR()">
+                        <span>🖨️</span>
+                        <span>Print QR Code</span>
+                    </button>
+                </div>
+                
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                    <strong>💡 Pro Tip:</strong> Save this QR code to your phone's photos for instant access to our services!
+                </p>
+            </div>
+            
+            <div class="qr-footer-text">
+                <p><strong>🐾 Thank you for choosing Paws & Care!</strong></p>
+                <p>Boston's most trusted pet sitting service since 2016</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOOKING OVERLAY -->
+    <div class="overlay" id="bookingOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="close-modal" onclick="closeOverlay('bookingOverlay')">×</button>
+                <h1>🐾 Book Your Pet Care Service</h1>
+                <p>Let's get your furry friend the best care possible!</p>
+            </div>
+            
+            <div class="success-message" id="successMessage">
+                <h3>🎉 Booking Request Submitted Successfully!</h3>
+                <p id="successText"></p>
+                <button class="booking-button" onclick="resetForm()" style="width: auto; margin-top: 1rem;">
+                    📅 Submit Another Booking
+                </button>
+            </div>
+            
+            <div class="modal-content" id="bookingContent">
+                <!-- SAVED INFO SECTION -->
+                <div class="saved-info-section" id="savedInfoSection" style="display: none;">
+                    <h3 style="margin: 0 0 1rem 0; color: #4CAF50;">💾 Saved Information Available</h3>
+                    <p style="margin: 0 0 1rem 0;">We found your previously saved contact information. Would you like to use it?</p>
+                    <div class="saved-info-buttons">
+                        <button class="info-button" onclick="loadSavedInfo()">📋 Use Saved Info</button>
+                        <button class="info-button" onclick="startFresh()">✨ Start Fresh</button>
+                        <button class="info-button danger" onclick="clearSavedInfo()">🗑️ Delete Saved Info</button>
+                    </div>
+                </div>
+                
+                <h2 style="text-align: center; margin-bottom: 2rem; color: #FFD700;">📅 Complete Your Booking</h2>
+                <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+                    <strong>Ready to give your pet the best care?</strong> Fill out the form below and I'll get back to you within 2 hours!
+                </p>
+                
+                <div class="booking-container">
+                    <div class="booking-form">
+                        <h3 style="margin-bottom: 1.5rem; color: #333;">📝 Booking Details</h3>
+                        
+                        <form id="bookingForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">👤 First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">👤 Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">📧 Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">📱 Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">🏠 Address (Boston Area) *</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="startDate">📅 Start Date *</label>
+                                    <input type="date" id="startDate" name="startDate" required min="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="endDate">📅 End Date *</label>
+                                    <input type="date" id="endDate" name="endDate" required min="">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="petInfo">🐾 Pet Information *</label>
+                                <textarea id="petInfo" name="petInfo" rows="3" placeholder="Pet name(s), breed, age, special needs, etc." required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>🎯 Select Services *</label>
+                                <div class="service-selection">
+                                    <div class="service-option" onclick="toggleService(this, 'in-home', 35)">
+                                        <input type="checkbox" name="services" value="in-home">
+                                        <h4>🏠 In-Home Care</h4>
+                                        <p>Daily visits to your home</p>
+                                        <div class="price">$35/day</div>
+                                    </div>
+                                    
+                                    <div class="service-option" onclick="toggleService(this, 'walking', 20)">
+                                        <input type="checkbox" name="services" value="walking">
+                                        <h4>🚶 Dog Walking</h4>
+                                        <p>30-45 minute walks</p>
+                                        <div class="price">$20/walk</div>
+                                    </div>
+                                    
+                                    <div class="service-option" onclick="toggleService(this, 'playtime', 25)">
+                                        <input type="checkbox" name="services" value="playtime">
+                                        <h4>🎾 Pet Playtime</h4>
+                                        <p>Interactive play sessions</p>
+                                        <div class="price">$25/hour</div>
+                                    </div>
+                                    
+                                    <div class="service-option" onclick="toggleService(this, 'overnight', 75)">
+                                        <input type="checkbox" name="services" value="overnight">
+                                        <h4>🌙 Overnight Care</h4>
+                                        <p>I stay at your home</p>
+                                        <div class="price">$75/night</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="specialRequests">📝 Special Requests</label>
+                                <textarea id="specialRequests" name="specialRequests" rows="3" placeholder="Medications, feeding schedule, exercise needs, etc."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="emergencyContact">🚨 Emergency Contact</label>
+                                <input type="text" id="emergencyContact" name="emergencyContact" placeholder="Name and phone number">
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="booking-summary">
+                        <h3 style="margin-bottom: 1.5rem; color: #FFD700;">💰 Booking Summary</h3>
+                        
+                        <div id="summaryContent">
+                            <div class="summary-item">
+                                <span>📅 Duration:</span>
+                                <span id="durationDisplay">Select dates</span>
+                            </div>
+                            
+                            <div class="summary-item">
+                                <span>🎯 Services:</span>
+                                <span id="servicesDisplay">None selected</span>
+                            </div>
+                            
+                            <div class="summary-item">
+                                <span>💵 Subtotal:</span>
+                                <span id="subtotalDisplay">$0</span>
+                            </div>
+                            
+                            <div class="summary-item">
+                                <span>🎉 <strong>Total Cost:</strong></span>
+                                <span id="totalDisplay"><strong>$0</strong></span>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="booking-button" id="submitBooking" disabled>
+                            📅 Submit Booking Request
+                        </button>
+                        
+                        <div class="emergency-note">
+                            <h4>🚨 Need Last-Minute Care?</h4>
+                            <p>Call/text me directly at <strong>(617) 555-PETS</strong> for same-day bookings!</p>
+                        </div>
+                        
+                        <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 255, 255, 0.8); border-radius: 10px; font-size: 0.9rem;">
+                            <h4 style="margin: 0 0 0.5rem 0; color: #FFD700;">📋 What Happens Next:</h4>
+                            <p style="margin: 0.2rem 0;">✅ I'll review your request within 2 hours</p>
+                            <p style="margin: 0.2rem 0;">✅ We'll schedule a FREE meet & greet</p>
+                            <p style="margin: 0.2rem 0;">✅ I'll create a custom care plan</p>
+                            <p style="margin: 0.2rem 0;">✅ 50% deposit secures your booking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHONE OVERLAY -->
+    <div class="overlay" id="phoneOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="close-modal" onclick="closeOverlay('phoneOverlay')">×</button>
+                <h1>📱 Call or Text Fiona</h1>
+                <p>Get in touch right now for immediate assistance!</p>
+            </div>
+            
+            <div class="modal-content">
+                <div class="contact-container">
+                    <div class="contact-method">
+                        <h2>📞 Main Phone Number</h2>
+                        <div class="contact-number">(617) 555-PETS</div>
+                        <p style="font-size: 1.2rem; margin: 1rem 0;"><strong>Available 7 days a week, 8 AM - 8 PM</strong></p>
+                        
+                        <a href="tel:6175557387" class="contact-action-button">📞 Call Now</a>
+                        <a href="sms:6175557387" class="contact-action-button">💬 Send Text</a>
+                        
+                        <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 243, 205, 0.9); border-radius: 10px;">
+                            <h4 style="color: #f57c00; margin: 0 0 1rem 0;">💡 Best Times to Call:</h4>
+                            <p style="margin: 0.5rem 0;"><strong>Monday-Friday:</strong> 9 AM - 6 PM</p>
+                            <p style="margin: 0.5rem 0;"><strong>Weekends:</strong> 10 AM - 4 PM</p>
+                            <p style="margin: 0.5rem 0;"><strong>Evenings:</strong> Available for emergencies</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <h2>🚨 Emergency Contact</h2>
+                        <div class="contact-number">(617) 555-HELP</div>
+                        <p style="font-size: 1.2rem; margin: 1rem 0;"><strong>24/7 Emergency Line</strong></p>
+                        
+                        <a href="tel:6175554357" class="contact-action-button">🚨 Emergency Call</a>
+                        
+                        <div style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(255, 228, 225, 0.9); border-radius: 10px;">
+                            <h4 style="color: #d32f2f; margin: 0 0 1rem 0;">⚠️ Use Emergency Line For:</h4>
+                            <p style="margin: 0.5rem 0;">• Pet health emergencies</p>
+                            <p style="margin: 0.5rem 0;">• Urgent schedule changes</p>
+                            <p style="margin: 0.5rem 0;">• Lost key situations</p>
+                            <p style="margin: 0.5rem 0;">• Any urgent pet concerns</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; padding: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 15px;">
+                        <h3 style="color: #FFD700; margin: 0 0 1rem 0;">📋 When You Call, Have Ready:</h3>
+                        <div style="text-align: left; max-width: 400px; margin: 0 auto;">
+                            <p style="margin: 0.5rem 0;">✅ Your name and phone number</p>
+                            <p style="margin: 0.5rem 0;">✅ Pet names and types</p>
+                            <p style="margin: 0.5rem 0;">✅ Service dates needed</p>
+                            <p style="margin: 0.5rem 0;">✅ Your address in Boston area</p>
+                            <p style="margin: 0.5rem 0;">✅ Any special pet needs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EMAIL OVERLAY -->
+    <div class="overlay" id="emailOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="close-modal" onclick="closeOverlay('emailOverlay')">×</button>
+                <h1>✉️ Email Fiona</h1>
+                <p>Send a detailed message about your pet care needs!</p>
+            </div>
+            
+            <div class="modal-content">
+                <div class="contact-container">
+                    <div class="contact-method">
+                        <h2>📧 Email Address</h2>
+                        <div class="contact-email">fiona@pawsandcare.com</div>
+                        <p style="font-size: 1.2rem; margin: 1rem 0;"><strong>I respond within 2-4 hours during business days</strong></p>
+                        
+                        <a href="mailto:fiona@pawsandcare.com?subject=Pet Care Inquiry&body=Hi Fiona,%0D%0A%0D%0AI'm interested in your pet sitting services. Here are my details:%0D%0A%0D%0APet Name(s): %0D%0APet Type/Breed: %0D%0AService Dates Needed: %0D%0AServices Interested In: %0D%0AYour Name: %0D%0APhone Number: %0D%0AAddress: %0D%0A%0D%0AAdditional Information:%0D%0A%0D%0AThank you!" class="contact-action-button">📧 Send Email Now</a>
+                        
+                        <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 243, 205, 0.9); border-radius: 10px;">
+                            <h4 style="color: #f57c00; margin: 0 0 1rem 0;">⏰ Email Response Times:</h4>
+                            <p style="margin: 0.5rem 0;"><strong>Business Hours:</strong> 2-4 hours</p>
+                            <p style="margin: 0.5rem 0;"><strong>Evenings/Weekends:</strong> Within 24 hours</p>
+                            <p style="margin: 0.5rem 0;"><strong>Urgent Requests:</strong> Call instead!</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; padding: 2rem; background: rgba(255, 255, 255, 0.9); border-radius: 15px;">
+                        <h3 style="color: #FFD700; margin: 0 0 1rem 0;">📝 Include in Your Email:</h3>
+                        <div style="text-align: left; max-width: 500px; margin: 0 auto;">
+                            <p style="margin: 0.5rem 0;"><strong>📅 Service Dates:</strong> When do you need pet care?</p>
+                            <p style="margin: 0.5rem 0;"><strong>🐾 Pet Details:</strong> Names, types, ages, special needs</p>
+                            <p style="margin: 0.5rem 0;"><strong>🏠 Location:</strong> Your address in Boston area</p>
+                            <p style="margin: 0.5rem 0;"><strong>🎯 Services:</strong> In-home, walking, overnight, etc.</p>
+                            <p style="margin: 0.5rem 0;"><strong>📞 Contact Info:</strong> Best phone number to reach you</p>
+                            <p style="margin: 0.5rem 0;"><strong>❓ Questions:</strong> Any specific concerns or requests</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(230, 255, 230, 0.9); border-radius: 10px;">
+                        <h4 style="color: #4CAF50; margin: 0 0 1rem 0;">🎉 What Happens After You Email:</h4>
+                        <p style="margin: 0.5rem 0;">✅ I'll review your pet care needs</p>
+                        <p style="margin: 0.5rem 0;">✅ Send you a detailed response with availability</p>
+                        <p style="margin: 0.5rem 0;">✅ Schedule a FREE meet & greet</p>
+                        <p style="margin: 0.5rem 0;">✅ Create a custom care plan for your pets</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // QR CODE FUNCTIONS
+        function downloadQR() {
+            const qrImage = document.querySelector('.qr-code');
+            const link = document.createElement('a');
+            link.download = 'paws-and-care-qr-code.png';
+            link.href = qrImage.src;
+            link.click();
+            
+            // Show success message
+            alert('🎉 QR Code downloaded! You can now print it or save it to your device.');
+        }
+        
+        function shareQR() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Paws & Care - Professional Pet Sitting',
+                    text: 'Check out Boston\'s most trusted pet sitting service!',
+                    url: 'https://pawsandcare.com'
+                }).then(() => {
+                    console.log('Successfully shared');
+                }).catch((error) => {
+                    console.log('Error sharing:', error);
+                    fallbackShare();
+                });
+            } else {
+                fallbackShare();
+            }
+        }
+        
+        function fallbackShare() {
+            const url = 'https://pawsandcare.com';
+            const text = 'Check out Paws & Care - Boston\'s most trusted pet sitting service!';
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(`${text}\n${url}`).then(() => {
+                    alert('📋 Website link copied to clipboard! You can now paste it anywhere to share.');
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = `${text}\n${url}`;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('📋 Website link copied to clipboard! You can now paste it anywhere to share.');
+            }
+        }
+        
+        function printQR() {
+            const qrSection = document.querySelector('.qr-section');
+            const printWindow = window.open('', '_blank');
+            
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>Paws & Care QR Code</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            text-align: center;
+                            padding: 2rem;
+                            margin: 0;
+                        }
+                        .qr-print {
+                            max-width: 400px;
+                            margin: 0 auto;
+                            border: 2px solid #FFD700;
+                            border-radius: 15px;
+                            padding: 2rem;
+                            background: white;
+                        }
+                        .qr-code {
+                            width: 200px;
+                            height: 200px;
+                            margin: 1rem auto;
+                            display: block;
+                        }
+                        h1 {
+                            color: #FFD700;
+                            margin-bottom: 1rem;
+                        }
+                        p {
+                            margin: 0.5rem 0;
+                            color: #333;
+                        }
+                        .contact-info {
+                            margin-top: 2rem;
+                            padding: 1rem;
+                            background: #f9f9f9;
+                            border-radius: 10px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="qr-print">
+                        <h1>🐾 Paws & Care</h1>
+                        <p><strong>Boston's Most Trusted Pet Sitting Service</strong></p>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://pawsandcare.com" alt="QR Code" class="qr-code">
+                        <p><strong>Scan to visit our website and book pet care!</strong></p>
+                        <div class="contact-info">
+                            <p><strong>Phone:</strong> (617) 555-PETS</p>
+                            <p><strong>Email:</strong> fiona@pawsandcare.com</p>
+                            <p><strong>Emergency:</strong> (617) 555-HELP</p>
+                            <p><strong>Website:</strong> pawsandcare.com</p>
+                        </div>
+                    </div>
+                </body>
+                </html>
+            `);
+            
+            printWindow.document.close();
+            printWindow.focus();
+            
+            setTimeout(() => {
+                printWindow.print();
+                printWindow.close();
+            }, 250);
+        }
+        
+        // LOCAL STORAGE FUNCTIONS
+        function saveContactInfo() {
+            const contactInfo = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                emergencyContact: document.getElementById('emergencyContact').value
+            };
+            
+            // Only save if at least name and email are filled
+            if (contactInfo.firstName && contactInfo.email) {
+                localStorage.setItem('pawsCareContactInfo', JSON.stringify(contactInfo));
+                console.log('Contact info saved!');
+            }
+        }
+        
+        function loadSavedInfo() {
+            const savedInfo = localStorage.getItem('pawsCareContactInfo');
+            if (savedInfo) {
+                const contactInfo = JSON.parse(savedInfo);
+                
+                document.getElementById('firstName').value = contactInfo.firstName || '';
+                document.getElementById('lastName').value = contactInfo.lastName || '';
+                document.getElementById('email').value = contactInfo.email || '';
+                document.getElementById('phone').value = contactInfo.phone || '';
+                document.getElementById('address').value = contactInfo.address || '';
+                document.getElementById('emergencyContact').value = contactInfo.emergencyContact || '';
+                
+                // Hide the saved info section
+                document.getElementById('savedInfoSection').style.display = 'none';
+                
+                // Update summary
+                updateSummary();
+                
+                alert('✅ Your saved information has been loaded!');
+            }
+        }
+        
+        function startFresh() {
+            // Just hide the saved info section and start with empty form
+            document.getElementById('savedInfoSection').style.display = 'none';
+        }
+        
+        function clearSavedInfo() {
+            if (confirm('🗑️ Are you sure you want to delete your saved contact information? This cannot be undone.')) {
+                localStorage.removeItem('pawsCareContactInfo');
+                document.getElementById('savedInfoSection').style.display = 'none';
+                alert('✅ Saved information has been deleted.');
+            }
+        }
+        
+        function checkForSavedInfo() {
+            const savedInfo = localStorage.getItem('pawsCareContactInfo');
+            if (savedInfo) {
+                document.getElementById('savedInfoSection').style.display = 'block';
+            } else {
+                document.getElementById('savedInfoSection').style.display = 'none';
+            }
+        }
+        
+        // Universal overlay functions
+        function openBooking() {
+            openOverlay('bookingOverlay');
+            // Set minimum date to tomorrow
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const tomorrowString = tomorrow.toISOString().split('T')[0];
+            document.getElementById('startDate').min = tomorrowString;
+            document.getElementById('endDate').min = tomorrowString;
+            
+            // Check for saved info
+            checkForSavedInfo();
+            
+            updateSummary();
+        }
+        
+        function openPhone() {
+            openOverlay('phoneOverlay');
+        }
+        
+        function openEmail() {
+            openOverlay('emailOverlay');
+        }
+        
+        function openOverlay(overlayId) {
+            document.getElementById(overlayId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeOverlay(overlayId) {
+            document.getElementById(overlayId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close overlay when clicking outside the modal
+        document.querySelectorAll('.overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeOverlay(this.id);
+                }
+            });
+        });
+        
+        // Close overlay with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.overlay').forEach(overlay => {
+                    if (overlay.style.display === 'block') {
+                        closeOverlay(overlay.id);
+                    }
+                });
+            }
+        });
+        
+        // Booking form functionality
+        let selectedServices = [];
+        let totalCost = 0;
+        
+        // Service prices
+        const servicePrices = {
+            'in-home': 35,
+            'walking': 20,
+            'playtime': 25,
+            'overnight': 75
+        };
+        
+        // Service names for display
+        const serviceNames = {
+            'in-home': 'In-Home Care ($35/day)',
+            'walking': 'Dog Walking ($20/walk)',
+            'playtime': 'Pet Playtime ($25/hour)',
+            'overnight': 'Overnight Care ($75/night)'
+        };
+        
+        function toggleService(element, serviceId, price) {
+            const checkbox = element.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            
+            if (checkbox.checked) {
+                element.classList.add('selected');
+                if (!selectedServices.includes(serviceId)) {
+                    selectedServices.push(serviceId);
+                }
+            } else {
+                element.classList.remove('selected');
+                selectedServices = selectedServices.filter(s => s !== serviceId);
+            }
+            
+            updateSummary();
+        }
+        
+        function calculateDays() {
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            
+            if (startDate && endDate) {
+                const start = new Date(startDate);
+                const end = new Date(endDate);
+                const diffTime = end - start;
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
+                return Math.max(1, diffDays);
+            }
+            return 0;
+        }
+        
+        function updateSummary() {
+            const days = calculateDays();
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            
+            // Update duration display
+            if (startDate && endDate) {
+                const start = new Date(startDate).toLocaleDateString();
+                const end = new Date(endDate).toLocaleDateString();
+                document.getElementById('durationDisplay').textContent = `${days} day(s) (${start} - ${end})`;
+            } else {
+                document.getElementById('durationDisplay').textContent = 'Select dates';
+            }
+            
+            // Update services display
+            if (selectedServices.length > 0) {
+                const serviceText = selectedServices.map(s => serviceNames[s]).join(', ');
+                document.getElementById('servicesDisplay').textContent = serviceText;
+            } else {
+                document.getElementById('servicesDisplay').textContent = 'None selected';
+            }
+            
+            // Calculate total cost
+            totalCost = 0;
+            selectedServices.forEach(serviceId => {
+                if (serviceId === 'walking' || serviceId === 'playtime') {
+                    totalCost += servicePrices[serviceId] * days;
+                } else {
+                    totalCost += servicePrices[serviceId] * days;
+                }
+            });
+            
+            document.getElementById('subtotalDisplay').textContent = `$${totalCost}`;
+            document.getElementById('totalDisplay').innerHTML = `<strong>$${totalCost}</strong>`;
+            
+            // Enable/disable submit button
+            const submitButton = document.getElementById('submitBooking');
+            const firstName = document.getElementById('firstName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const petInfo = document.getElementById('petInfo').value;
+            
+            if (firstName && email && phone && petInfo && startDate && endDate && selectedServices.length > 0) {
+                submitButton.disabled = false;
+                submitButton.textContent = '📅 Submit Booking Request';
+            } else {
+                submitButton.disabled = true;
+                submitButton.textContent = '📅 Complete Form to Submit';
+            }
+        }
+        
+        function resetForm() {
+            document.getElementById('bookingForm').reset();
+            selectedServices = [];
+            totalCost = 0;
+            document.querySelectorAll('.service-option').forEach(option => {
+                option.classList.remove('selected');
+                option.querySelector('input').checked = false;
+            });
+            updateSummary();
+            
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('bookingContent').style.display = 'block';
+            
+            // Check for saved info again
+            checkForSavedInfo();
+        }
+        
+        // Add event listeners
+        document.getElementById('startDate').addEventListener('change', function() {
+            document.getElementById('endDate').min = this.value;
+            updateSummary();
+        });
+        
+        document.getElementById('endDate').addEventListener('change', updateSummary);
+        
+        // Add event listeners to all form inputs
+        const formInputs = document.querySelectorAll('#bookingForm input, #bookingForm textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('input', function() {
+                updateSummary();
+                // Auto-save contact info when user types
+                if (['firstName', 'lastName', 'email', 'phone', 'address', 'emergencyContact'].includes(this.id)) {
+                    setTimeout(saveContactInfo, 1000); // Save after 1 second of no typing
+                }
+            });
+        });
+        
+        // Handle form submission
+        document.getElementById('submitBooking').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Save contact info before submitting
+            saveContactInfo();
+            
+            // Collect form data
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                startDate: document.getElementById('startDate').value,
+                endDate: document.getElementById('endDate').value,
+                petInfo: document.getElementById('petInfo').value,
+                services: selectedServices,
+                specialRequests: document.getElementById('specialRequests').value,
+                emergencyContact: document.getElementById('emergencyContact').value,
+                totalCost: totalCost
+            };
+            
+            // Simulate form submission
+            this.textContent = '📤 Sending Request...';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                const successText = `🎉 Hi ${formData.firstName}! I've received your booking request for ${calculateDays()} days of pet care.\n\nTotal estimated cost: $${totalCost}\n\nI'll contact you within 2 hours at ${formData.phone} to schedule our meet & greet!\n\n💾 Your contact information has been saved for future bookings!\n\n- Fiona 🐾`;
+                
+                document.getElementById('successText').textContent = successText;
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('bookingContent').style.display = 'none';
+                
+                // Scroll to top of modal
+                document.querySelector('.modal').scrollTop = 0;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
